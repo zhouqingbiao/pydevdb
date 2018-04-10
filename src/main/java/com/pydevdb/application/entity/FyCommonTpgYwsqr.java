@@ -1,0 +1,68 @@
+package com.pydevdb.application.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(schema = "FY_COMMON", name = "TPU_YWSQR")
+public class FyCommonTpgYwsqr {
+
+	@Id
+	@GeneratedValue
+	private Long id;
+
+	@Column
+	private String sqrmc;
+
+	@Column
+	private String zjhm;
+
+	@Column
+	private String lxsjhm;
+
+	@Column
+	private String dz;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getSqrmc() {
+		return sqrmc;
+	}
+
+	public void setSqrmc(String sqrmc) {
+		this.sqrmc = sqrmc;
+	}
+
+	public String getZjhm() {
+		return zjhm;
+	}
+
+	public void setZjhm(String zjhm) {
+		this.zjhm = zjhm;
+	}
+
+	public String getLxsjhm() {
+		return lxsjhm;
+	}
+
+	public void setLxsjhm(String lxsjhm) {
+		this.lxsjhm = lxsjhm;
+	}
+
+	public String getDz() {
+		return dz;
+	}
+
+	public void setDz(String dz) {
+		this.dz = dz;
+	}
+}
