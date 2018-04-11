@@ -1,4 +1,4 @@
-package com.pydevdb.application.controller;
+package com.pydevdb.application.web;
 
 import java.util.List;
 import java.util.Optional;
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.pydevdb.application.entity.FyCommonTpgYwsqr;
-import com.pydevdb.application.entity.FyCommonTpgYwsqrRepository;
+import com.pydevdb.application.domain.FyCommonTpgYwsqr;
+import com.pydevdb.application.service.FyCommonTpgYwsqrRepository;
 
 @Controller
 public class FyCommonTpuYwsqrController {
@@ -19,7 +19,7 @@ public class FyCommonTpuYwsqrController {
 	@Autowired
 	private FyCommonTpgYwsqrRepository fyCommonTpgYwsqrRepository;
 
-	@GetMapping(path = "/FyCommonTpuYwsqr")
+	@GetMapping("/FyCommonTpuYwsqr")
 	public String fyCommonTpuYwsqrForm(Model model, @ModelAttribute FyCommonTpgYwsqr fyCommonTpgYwsqr) {
 
 		List<FyCommonTpgYwsqr> listFyCommonTpgYwsqr = fyCommonTpgYwsqrRepository
@@ -30,7 +30,7 @@ public class FyCommonTpuYwsqrController {
 		return "FyCommonTpuYwsqr";
 	}
 
-	@PostMapping(path = "/FyCommonTpuYwsqr")
+	@PostMapping("/FyCommonTpuYwsqr")
 	public String fyCommonTpuYwsqrUpdate(Model model, @ModelAttribute FyCommonTpgYwsqr fyCommonTpgYwsqr) {
 
 		fyCommonTpgYwsqrRepository.save(fyCommonTpgYwsqr);

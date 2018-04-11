@@ -1,4 +1,6 @@
-package com.pydevdb.application.entity;
+package com.pydevdb.application.domain;
+
+import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,7 +10,9 @@ import javax.persistence.Table;
 
 @Entity
 @Table(schema = "FY_COMMON", name = "TPU_YWSQR")
-public class FyCommonTpgYwsqr {
+public class FyCommonTpgYwsqr implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue

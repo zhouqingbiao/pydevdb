@@ -1,4 +1,4 @@
-package com.pydevdb.application.controller;
+package com.pydevdb.application.web;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -7,11 +7,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class FyController {
+public class SlashController {
 
-	@GetMapping(path = "/Fy")
+	@GetMapping("/")
 	public String Controller(Model model, HttpServletRequest request) {
 
-		return "Fy";
+		// IP
+		model.addAttribute("RA", request.getRemoteAddr());
+
+		return "Slash";
 	}
 }
