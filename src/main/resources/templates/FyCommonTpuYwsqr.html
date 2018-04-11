@@ -1,63 +1,77 @@
 <!doctype html>
 <html>
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="getbootstrap/bootstrap.min.css">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="getbootstrap/bootstrap.min.css">
 
-    <title>FyCommonTpgYwsqr</title>
+<title>FyCommonTpgYwsqr</title>
 </head>
 <body>
+	<div data-th-replace="Navbar :: html"></div>
+
 	<div class="container">
 		<form method="get" action="/FyCommonTpuYwsqr">
 			<div class="form-row">
-				<div class="form-group col-md-4">
-					<label for="sqrmc">SQRMC</label>
-					<input type="text" class="form-control" name="sqrmc" id="sqrmc" placeholder="SQRMC">
+				<div class="form-group col-md-3">
+					<input type="text" class="form-control" name="sqrmc" id="sqrmc"
+						placeholder="SQRMC">
 				</div>
-				<div class="form-group col-md-4">
-					<label for="zjhm">ZJHM</label>
-					<input type="text" class="form-control" name="zjhm" id="zjhm" placeholder="ZJHM">
+				<div class="form-group col-md-3">
+					<input type="text" class="form-control" name="zjhm" id="zjhm"
+						placeholder="ZJHM">
+				</div>
+				<div class="form-group col-md-1">
+					<button type="submit" class="form-control btn btn-primary">查询</button>
 				</div>
 			</div>
-			<button type="submit" class="btn btn-primary">query</button>
 		</form>
-	    <form data-th-each="list : ${listFyCommonTpgYwsqr}" method="post" action="/FyCommonTpuYwsqr">
-	        <div class="form-row">
-	            <div class="form-group col-md-4">
-	                <label for="id">ID</label>
-	                <input type="text" class="form-control" name="id" id="id" placeholder="ID" readonly="readonly" data-th-value="${list.id}">
-	            </div>
-	            <div class="form-group col-md-4">
-	                <label for="sqrmc">SQRMC</label>
-	                <input type="text" class="form-control" name="sqrmc" id="sqrmc" placeholder="SQRMC" data-th-value="${list.sqrmc}">
-	            </div>
-	            <div class="form-group col-md-4">
-	                <label for="zjhm">ZJHM</label>
-	                <input type="text" class="form-control" name="zjhm" id="zjhm" placeholder="ZJHM" data-th-value="${list.zjhm}">
-	            </div>
-	        </div>
-	        <div class="form-row">
-	            <div class="form-group col-md-4">
-	                <label for="lxsjhm">LXSJHM</label>
-	                <input type="text" class="form-control" name="lxsjhm" id="lxsjhm" placeholder="LXSJHM" data-th-value="${list.lxsjhm}">
-	            </div>
-	            <div class="form-group col-md-4">
-	                <label for="dz">DZ</label>
-	                <input type="text" class="form-control" name="dz" id="dz" placeholder="DZ" data-th-value="${list.dz}">
-	            </div>
-	        </div>
-	        <button type="submit" class="btn btn-primary">update</button>
-	    </form>
+		<form data-th-each="list : ${listFyCommonTpgYwsqr}" method="post"
+			action="/FyCommonTpuYwsqr">
+			<div class="form-row">
+				<div class="form-group col-md-3">
+					<label for="id">ID</label> <input type="text" class="form-control"
+						name="id" id="id" placeholder="ID" readonly="readonly"
+						data-th-value="${list.id}">
+				</div>
+				<div class="form-group col-md-3">
+					<label for="sqrmc">SQRMC</label> <input type="text"
+						class="form-control" name="sqrmc" id="sqrmc" placeholder="SQRMC"
+						data-th-value="${list.sqrmc}">
+				</div>
+				<div class="form-group col-md-3">
+					<label for="zjhm">ZJHM</label> <input type="text"
+						class="form-control" name="zjhm" id="zjhm" placeholder="ZJHM"
+						data-th-value="${list.zjhm}">
+				</div>
+				<div class="form-group col-md-3">
+					<label for="lxsjhm">LXSJHM</label> <input type="text"
+						class="form-control" name="lxsjhm" id="lxsjhm"
+						placeholder="LXSJHM" data-th-value="${list.lxsjhm}">
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-3">
+					<label for="dz">DZ</label> <input type="text" class="form-control"
+						name="dz" id="dz" placeholder="DZ" data-th-value="${list.dz}">
+				</div>
+				<div class="form-group col-md-1">
+					<label for="submit">BUTTON</label>
+					<button type="submit" class="form-control btn btn-primary"
+						id="submit">保存</button>
+				</div>
+			</div>
+		</form>
 	</div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="jquery/jquery-3.3.1.min.js"></script>
-    <script src="popper/popper.min.js"></script>
-    <script src="getbootstrap/bootstrap.min.js"></script>
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="jquery/jquery-3.3.1.min.js"></script>
+	<script src="popper/popper.min.js"></script>
+	<script src="getbootstrap/bootstrap.min.js"></script>
 </body>
 </html>
