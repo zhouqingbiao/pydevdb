@@ -20,7 +20,7 @@ public class FyCommonTpuYwsqrController {
 	private FyCommonTpgYwsqrRepository fyCommonTpgYwsqrRepository;
 
 	@GetMapping("/FyCommonTpuYwsqr")
-	public String fyCommonTpuYwsqrForm(Model model, @ModelAttribute FyCommonTpgYwsqr fyCommonTpgYwsqr) {
+	public String fyCommonTpgYwsqrGet(Model model, @ModelAttribute FyCommonTpgYwsqr fyCommonTpgYwsqr) {
 
 		List<FyCommonTpgYwsqr> listFyCommonTpgYwsqr = fyCommonTpgYwsqrRepository
 				.findBySqrmcOrZjhm(fyCommonTpgYwsqr.getSqrmc(), fyCommonTpgYwsqr.getZjhm());
@@ -31,7 +31,7 @@ public class FyCommonTpuYwsqrController {
 	}
 
 	@PostMapping("/FyCommonTpuYwsqr")
-	public String fyCommonTpuYwsqrUpdate(Model model, @ModelAttribute FyCommonTpgYwsqr fyCommonTpgYwsqr) {
+	public String fyCommonTpgYwsqrPost(Model model, @ModelAttribute FyCommonTpgYwsqr fyCommonTpgYwsqr) {
 
 		fyCommonTpgYwsqrRepository.save(fyCommonTpgYwsqr);
 		Optional<FyCommonTpgYwsqr> optionalFyCommonTpgYwsqr = fyCommonTpgYwsqrRepository
