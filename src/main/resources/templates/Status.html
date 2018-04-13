@@ -9,25 +9,18 @@
 <!-- Bootstrap CSS -->
 <link data-th-replace="Starter :: link">
 
-<!-- Seniverse -->
-<script data-th-replace="SeniverseFDQP :: script"></script>
-
-<title>Fy</title>
+<title data-th-text="${Status}"></title>
 </head>
 <body>
-	<div data-th-replace="Navbar :: nav"></div>
+	<div data-th-replace="navbar :: nav"></div>
 
-	<div class="container">
-		<h1>
-			<a href="/FyCommonTpuYwsqr" class="badge badge-primary">FyCommonTpuYwsqr</a>
-		</h1>
-	</div>
+	<p class="display-1 text-secondary" align="center"
+		data-th-text="${Status}"></p>
+	<p class="display-1 text-danger" align="center">Sorry!</p>
 
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script data-th-replace="Starter :: script"></script>
-
-	<!-- Seniverse -->
 	<script data-th-replace="SeniverseGDJJ :: script"></script>
 </body>
 </html>
