@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,10 +23,14 @@ public class FyCommonTpuYwsqrController {
 	@GetMapping("/FyCommonTpuYwsqr")
 	public String fyCommonTpgYwsqrGet(Model model, @ModelAttribute FyCommonTpgYwsqr fyCommonTpgYwsqr) {
 
-		List<FyCommonTpgYwsqr> listFyCommonTpgYwsqr = fyCommonTpgYwsqrRepository
-				.findBySqrmcOrZjhm(fyCommonTpgYwsqr.getSqrmc(), fyCommonTpgYwsqr.getZjhm());
+		if (StringUtils.isEmpty(fyCommonTpgYwsqr.getSqrmc()) && StringUtils.isEmpty(fyCommonTpgYwsqr.getZjhm())) {
+			return "FyCommonTpuYwsqr";
+		} else {
+			List<FyCommonTpgYwsqr> listFyCommonTpgYwsqr = fyCommonTpgYwsqrRepository
+					.findBySqrmcLikeOrZjhm(fyCommonTpgYwsqr.getSqrmc(), fyCommonTpgYwsqr.getZjhm());
 
-		model.addAttribute("listFyCommonTpgYwsqr", listFyCommonTpgYwsqr);
+			model.addAttribute("listFyCommonTpgYwsqr", listFyCommonTpgYwsqr);
+		}
 
 		return "FyCommonTpuYwsqr";
 	}

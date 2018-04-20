@@ -7,5 +7,5 @@ import org.springframework.data.repository.CrudRepository;
 import com.pydevdb.application.domain.FyCommonTpgYwsqr;
 
 public interface FyCommonTpgYwsqrRepository extends CrudRepository<FyCommonTpgYwsqr, Long> {
-	List<FyCommonTpgYwsqr> findBySqrmcOrZjhm(String sqrmc, String zjhm);
+	List<FyCommonTpgYwsqr> findBySqrmcLikeOrZjhm(String sqrmc, String zjhm);
 }
