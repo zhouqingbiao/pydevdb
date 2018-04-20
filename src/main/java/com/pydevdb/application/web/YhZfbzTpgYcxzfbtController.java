@@ -34,7 +34,7 @@ public class YhZfbzTpgYcxzfbtController {
 	}
 
 	@PostMapping("/YhZfbzTpgYcxzfbt")
-	public String YhZfbzTpgYcxzfbtPost(Model model, @ModelAttribute YhZfbzTpgYcxzfbt YhZfbzTpgYcxzfbt) {
+	public String yhZfbzTpgYcxzfbtPost(Model model, @ModelAttribute YhZfbzTpgYcxzfbt YhZfbzTpgYcxzfbt) {
 
 		yhZfbzTpgYcxzfbtRepository.save(YhZfbzTpgYcxzfbt);
 		Optional<YhZfbzTpgYcxzfbt> optionalYhZfbzTpgYcxzfbt = yhZfbzTpgYcxzfbtRepository
