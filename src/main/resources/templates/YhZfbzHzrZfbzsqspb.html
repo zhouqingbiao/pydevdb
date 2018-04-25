@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<!-- Required meta tags -->
+<meta data-th-replace="Starter :: meta">
+
+<!-- Bootstrap CSS -->
+<link data-th-replace="Starter :: link">
+
+<!-- Seniverse -->
+<script data-th-replace="SeniverseFDQP :: script"></script>
+
+<title>YhZfbzHzrZfbzsqspb</title>
+</head>
+<body>
+	<div data-th-replace="Navbar :: nav"></div>
+
+	<div class="container">
+		<form data-th-each="list : ${listYhZfbzHzrZfbzsqspb}" method="post"
+			action="/YhZfbzHzrZfbzsqspb">
+			<div class="form-row">
+				<div class="form-group col-md-3">
+					<label for="id">ID</label> <input type="text" class="form-control"
+						name="id" id="id" placeholder="ID" readonly="readonly"
+						data-th-value="${list.id}">
+				</div>
+				<div class="form-group col-md-3">
+					<label for="businessid">BUSINESSID</label> <input type="text"
+						class="form-control" name="businessid" id="businessid"
+						placeholder="BUSINESSID" readonly="readonly"
+						data-th-value="${list.businessid}">
+				</div>
+				<div class="form-group col-md-3">
+					<label for="yxdk">YXDK</label> <input type="text"
+						class="form-control" name="yxdk" id="yxdk" placeholder="YXDK"
+						data-th-value="${list.yxdk}">
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-3">
+					<label for="ywlb">YWLB</label> <input type="text"
+						class="form-control" name="ywlb" id="ywlb" placeholder="YWLB"
+						readonly="readonly" data-th-value="${list.ywlb}">
+				</div>
+				<div class="form-group col-md-1">
+					<label for="submit">BUTTON</label>
+					<button type="submit" class="form-control btn btn-primary"
+						id="submit">保存</button>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script data-th-replace="Starter :: script"></script>
+
+	<!-- Seniverse -->
+	<script data-th-replace="SeniverseGDJJ :: script"></script>
+</body>
+</html>
