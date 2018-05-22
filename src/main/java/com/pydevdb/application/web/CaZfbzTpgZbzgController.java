@@ -59,14 +59,13 @@ public class CaZfbzTpgZbzgController {
 	public String caZfbzTpgZbzgInsert(Model model, Long id, Long businessid) {
 
 		List<CaZfbzTpgZbzg> listCaZfbzTpgZbzg = caZfbzTpgZbzgRepository.findByBusinessid(businessid);
-		if (listCaZfbzTpgZbzg == null) {
+		if (listCaZfbzTpgZbzg.isEmpty()) {
 			CaZfbzTpgZbzg caZfbzTpgZbzg = new CaZfbzTpgZbzg();
 
 			CaCommonWfmsInstBusiness caCommonWfmsInstBusiness = caCommonWfmsInstBusinessRepository.findById(businessid)
 					.get();
 			CaCommonTpuYwsqr caCommonTpuYwsqr = caCommonTpuYwsqrRepository.findById(id).get();
 
-			caZfbzTpgZbzg.setId(businessid);
 			caZfbzTpgZbzg.setZgzh(businessid.toString());
 			caZfbzTpgZbzg.setBusinessid(businessid);
 			caZfbzTpgZbzg.setZgzlb(caCommonWfmsInstBusiness.getBpcategorycode());
@@ -78,9 +77,10 @@ public class CaZfbzTpgZbzgController {
 			caZfbzTpgZbzg.setSqrxm(caCommonTpuYwsqr.getSqrmc());
 			caZfbzTpgZbzg.setSqrsfzh(caCommonTpuYwsqr.getZjhm());
 
-			caZfbzTpgZbzgRepository.save(caZfbzTpgZbzg);
+			model.addAttribute("listCaZfbzTpgZbzg", caZfbzTpgZbzgRepository.save(caZfbzTpgZbzg));
 
-			model.addAttribute("listCaZfbzTpgZbzg", caZfbzTpgZbzgRepository.findById(businessid));
+			String message = "资格证信息已生成！";
+			model.addAttribute("message", message);
 		} else {
 			String message = "资格证信息已存在！";
 			model.addAttribute("message", message);

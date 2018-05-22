@@ -6,7 +6,9 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -16,7 +18,8 @@ public class CaZfbzTpgZbzg implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(generator = "TPG_ZBZG_SEQUENCE", strategy = GenerationType.AUTO)
+	@SequenceGenerator(schema = "CA_ZFBZ", name = "TPG_ZBZG_SEQUENCE", sequenceName = "TPG_ZBZG_SEQUENCE")
 	private Long id;
 
 	@Column
