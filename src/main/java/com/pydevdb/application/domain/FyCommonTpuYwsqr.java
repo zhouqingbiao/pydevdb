@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(schema = "FY_COMMON", name = "TPU_YWSQR")
-public class FyCommonTpgYwsqr implements Serializable {
+public class FyCommonTpuYwsqr implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 

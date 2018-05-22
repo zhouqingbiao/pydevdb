@@ -11,37 +11,37 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.pydevdb.application.domain.FyCommonTpgYwsqr;
-import com.pydevdb.application.service.FyCommonTpgYwsqrRepository;
+import com.pydevdb.application.domain.FyCommonTpuYwsqr;
+import com.pydevdb.application.service.FyCommonTpuYwsqrRepository;
 
 @Controller
 public class FyCommonTpuYwsqrController {
 
 	@Autowired
-	private FyCommonTpgYwsqrRepository fyCommonTpgYwsqrRepository;
+	private FyCommonTpuYwsqrRepository fyCommonTpuYwsqrRepository;
 
 	@GetMapping("/FyCommonTpuYwsqr")
-	public String fyCommonTpgYwsqrGet(Model model, @ModelAttribute FyCommonTpgYwsqr fyCommonTpgYwsqr) {
+	public String fyCommonTpuYwsqrGet(Model model, @ModelAttribute FyCommonTpuYwsqr fyCommonTpuYwsqr) {
 
-		if (StringUtils.isEmpty(fyCommonTpgYwsqr.getSqrmc()) && StringUtils.isEmpty(fyCommonTpgYwsqr.getZjhm())) {
+		if (StringUtils.isEmpty(fyCommonTpuYwsqr.getSqrmc()) && StringUtils.isEmpty(fyCommonTpuYwsqr.getZjhm())) {
 			return "FyCommonTpuYwsqr";
 		} else {
-			List<FyCommonTpgYwsqr> listFyCommonTpgYwsqr = fyCommonTpgYwsqrRepository
-					.findBySqrmcLikeOrZjhm(fyCommonTpgYwsqr.getSqrmc(), fyCommonTpgYwsqr.getZjhm());
+			List<FyCommonTpuYwsqr> listFyCommonTpuYwsqr = fyCommonTpuYwsqrRepository
+					.findBySqrmcLikeOrZjhm(fyCommonTpuYwsqr.getSqrmc(), fyCommonTpuYwsqr.getZjhm());
 
-			model.addAttribute("listFyCommonTpgYwsqr", listFyCommonTpgYwsqr);
+			model.addAttribute("listFyCommonTpuYwsqr", listFyCommonTpuYwsqr);
 		}
 
 		return "FyCommonTpuYwsqr";
 	}
 
 	@PostMapping("/FyCommonTpuYwsqr")
-	public String fyCommonTpgYwsqrPost(Model model, @ModelAttribute FyCommonTpgYwsqr fyCommonTpgYwsqr) {
+	public String fyCommonTpuYwsqrPost(Model model, @ModelAttribute FyCommonTpuYwsqr fyCommonTpuYwsqr) {
 
-		fyCommonTpgYwsqrRepository.save(fyCommonTpgYwsqr);
-		Optional<FyCommonTpgYwsqr> optionalFyCommonTpgYwsqr = fyCommonTpgYwsqrRepository
-				.findById(fyCommonTpgYwsqr.getId());
-		model.addAttribute("listFyCommonTpgYwsqr", optionalFyCommonTpgYwsqr.get());
+		fyCommonTpuYwsqrRepository.save(fyCommonTpuYwsqr);
+		Optional<FyCommonTpuYwsqr> optionalFyCommonTpuYwsqr = fyCommonTpuYwsqrRepository
+				.findById(fyCommonTpuYwsqr.getId());
+		model.addAttribute("listFyCommonTpuYwsqr", optionalFyCommonTpuYwsqr.get());
 		return "FyCommonTpuYwsqr";
 	}
 }

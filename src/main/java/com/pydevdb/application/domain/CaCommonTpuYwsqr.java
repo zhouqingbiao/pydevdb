@@ -9,8 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(schema = "YH_COMMON", name = "TPU_YWSQR")
-public class YhCommonTpgYwsqr implements Serializable {
+@Table(schema = "CA_COMMON", name = "TPU_YWSQR")
+public class CaCommonTpuYwsqr implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -29,9 +29,6 @@ public class YhCommonTpgYwsqr implements Serializable {
 
 	@Column
 	private String dz;
-
-	@Column
-	private String gzdwmc;
 
 	@Column
 	private Long businessid;
@@ -74,14 +71,6 @@ public class YhCommonTpgYwsqr implements Serializable {
 
 	public void setDz(String dz) {
 		this.dz = dz;
-	}
-
-	public String getGzdwmc() {
-		return gzdwmc;
-	}
-
-	public void setGzdwmc(String gzdwmc) {
-		this.gzdwmc = gzdwmc;
 	}
 
 	public Long getBusinessid() {
