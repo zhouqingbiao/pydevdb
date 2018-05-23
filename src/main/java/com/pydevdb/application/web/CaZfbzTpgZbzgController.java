@@ -57,15 +57,22 @@ public class CaZfbzTpgZbzgController {
 
 	@GetMapping("/CaZfbzTpgZbzgInsert")
 	public String caZfbzTpgZbzgInsert(Model model, Long id, Long businessid) {
-
+		// 使用businessid获取CaZfbzTpgZbzg
 		List<CaZfbzTpgZbzg> listCaZfbzTpgZbzg = caZfbzTpgZbzgRepository.findByBusinessid(businessid);
+
+		// 判定CaZfbzTpgZbzg是否为空
 		if (listCaZfbzTpgZbzg.isEmpty()) {
+			// 定义CaZfbzTpgZbzg实体
 			CaZfbzTpgZbzg caZfbzTpgZbzg = new CaZfbzTpgZbzg();
 
+			// 获取CaCommonWfmsInstBusiness
 			CaCommonWfmsInstBusiness caCommonWfmsInstBusiness = caCommonWfmsInstBusinessRepository.findById(businessid)
 					.get();
+
+			// 获取CaCommonTpuYwsqr
 			CaCommonTpuYwsqr caCommonTpuYwsqr = caCommonTpuYwsqrRepository.findById(id).get();
 
+			// 传入参数
 			caZfbzTpgZbzg.setZgzh(businessid.toString());
 			caZfbzTpgZbzg.setBusinessid(businessid);
 			caZfbzTpgZbzg.setZgzlb(caCommonWfmsInstBusiness.getBpcategorycode());
@@ -77,11 +84,15 @@ public class CaZfbzTpgZbzgController {
 			caZfbzTpgZbzg.setSqrxm(caCommonTpuYwsqr.getSqrmc());
 			caZfbzTpgZbzg.setSqrsfzh(caCommonTpuYwsqr.getZjhm());
 
+			// 传送前台变量
 			model.addAttribute("listCaZfbzTpgZbzg", caZfbzTpgZbzgRepository.save(caZfbzTpgZbzg));
 
 			String message = "资格证信息已生成！";
 			model.addAttribute("message", message);
 		} else {
+			// 传送前台变量
+			model.addAttribute("listCaZfbzTpgZbzg", listCaZfbzTpgZbzg);
+
 			String message = "资格证信息已存在！";
 			model.addAttribute("message", message);
 		}
