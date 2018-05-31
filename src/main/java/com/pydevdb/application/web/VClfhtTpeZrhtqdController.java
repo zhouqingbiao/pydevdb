@@ -1,5 +1,6 @@
 package com.pydevdb.application.web;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,15 +21,17 @@ public class VClfhtTpeZrhtqdController {
 	@GetMapping("/VClfhtTpeZrhtqd")
 	public String vClfhtTpeZrhtqdGet(Model model, String fwzl) {
 
-		if (StringUtils.isEmpty(fwzl)) {
-			return "VClfhtTpeZrhtqd";
-		} else {
-			List<VClfhtTpeZrhtqd> listVClfhtTpeZrhtqd = vClfhtTpeZrhtqdRepository
-					.findByFwzlLikeOrderByHtqdsjDesc("%" + fwzl + "%");
+		List<VClfhtTpeZrhtqd> listVClfhtTpeZrhtqd;
 
-			model.addAttribute("fwzl", fwzl);
-			model.addAttribute("listVClfhtTpeZrhtqd", listVClfhtTpeZrhtqd);
+		if (StringUtils.isEmpty(fwzl)) {
+			listVClfhtTpeZrhtqd = vClfhtTpeZrhtqdRepository
+					.findByHtqdsjBetweenOrderByHtqdsjDesc(LocalDate.now().minusWeeks(1), LocalDate.now().plusDays(1));
+		} else {
+			listVClfhtTpeZrhtqd = vClfhtTpeZrhtqdRepository.findByFwzlLikeOrderByHtqdsjDesc("%" + fwzl + "%");
 		}
+
+		model.addAttribute("fwzl", fwzl);
+		model.addAttribute("listVClfhtTpeZrhtqd", listVClfhtTpeZrhtqd);
 
 		return "VClfhtTpeZrhtqd";
 	}

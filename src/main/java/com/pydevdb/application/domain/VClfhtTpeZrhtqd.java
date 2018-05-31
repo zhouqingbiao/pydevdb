@@ -1,7 +1,7 @@
 package com.pydevdb.application.domain;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -32,7 +32,7 @@ public class VClfhtTpeZrhtqd implements Serializable {
 	private Double dj;
 
 	@Column
-	private Date htqdsj;
+	private LocalDate htqdsj;
 
 	@Column
 	private String xzqh;
@@ -77,11 +77,11 @@ public class VClfhtTpeZrhtqd implements Serializable {
 		this.dj = dj;
 	}
 
-	public Date getHtqdsj() {
+	public LocalDate getHtqdsj() {
 		return htqdsj;
 	}
 
-	public void setHtqdsj(Date htqdsj) {
+	public void setHtqdsj(LocalDate htqdsj) {
 		this.htqdsj = htqdsj;
 	}
 
