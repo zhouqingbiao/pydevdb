@@ -17,29 +17,29 @@ import com.pydevdb.application.service.YhZfbzTpgYcxzfbtRepository;
 @Controller
 public class YhZfbzTpgYcxzfbtController {
 
-	@Autowired
-	private YhZfbzTpgYcxzfbtRepository yhZfbzTpgYcxzfbtRepository;
+    @Autowired
+    private YhZfbzTpgYcxzfbtRepository yhZfbzTpgYcxzfbtRepository;
 
-	@GetMapping("/YhZfbzTpgYcxzfbt")
-	public String yhZfbzTpgYcxzfbtGet(Model model, Long businessid) {
+    @GetMapping("/YhZfbzTpgYcxzfbt")
+    public String yhZfbzTpgYcxzfbtGet(Model model, Long businessid) {
 
-		if (StringUtils.isEmpty(businessid)) {
-			return "YhZfbzTpgYcxzfbt";
-		} else {
-			List<YhZfbzTpgYcxzfbt> listYhZfbzTpgYcxzfbt = yhZfbzTpgYcxzfbtRepository.findByBusinessid(businessid);
-			model.addAttribute("listYhZfbzTpgYcxzfbt", listYhZfbzTpgYcxzfbt);
-		}
+        if (StringUtils.isEmpty(businessid)) {
+            return "YhZfbzTpgYcxzfbt";
+        } else {
+            List<YhZfbzTpgYcxzfbt> listYhZfbzTpgYcxzfbt = yhZfbzTpgYcxzfbtRepository.findByBusinessid(businessid);
+            model.addAttribute("listYhZfbzTpgYcxzfbt", listYhZfbzTpgYcxzfbt);
+        }
 
-		return "YhZfbzTpgYcxzfbt";
-	}
+        return "YhZfbzTpgYcxzfbt";
+    }
 
-	@PostMapping("/YhZfbzTpgYcxzfbt")
-	public String yhZfbzTpgYcxzfbtPost(Model model, @ModelAttribute YhZfbzTpgYcxzfbt YhZfbzTpgYcxzfbt) {
+    @PostMapping("/YhZfbzTpgYcxzfbt")
+    public String yhZfbzTpgYcxzfbtPost(Model model, @ModelAttribute YhZfbzTpgYcxzfbt YhZfbzTpgYcxzfbt) {
 
-		yhZfbzTpgYcxzfbtRepository.save(YhZfbzTpgYcxzfbt);
-		Optional<YhZfbzTpgYcxzfbt> optionalYhZfbzTpgYcxzfbt = yhZfbzTpgYcxzfbtRepository
-				.findById(YhZfbzTpgYcxzfbt.getId());
-		model.addAttribute("listYhZfbzTpgYcxzfbt", optionalYhZfbzTpgYcxzfbt.get());
-		return "YhZfbzTpgYcxzfbt";
-	}
+        yhZfbzTpgYcxzfbtRepository.save(YhZfbzTpgYcxzfbt);
+        Optional<YhZfbzTpgYcxzfbt> optionalYhZfbzTpgYcxzfbt = yhZfbzTpgYcxzfbtRepository
+                .findById(YhZfbzTpgYcxzfbt.getId());
+        model.addAttribute("listYhZfbzTpgYcxzfbt", optionalYhZfbzTpgYcxzfbt.get());
+        return "YhZfbzTpgYcxzfbt";
+    }
 }

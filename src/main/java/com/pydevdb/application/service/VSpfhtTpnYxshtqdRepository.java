@@ -8,8 +8,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.pydevdb.application.domain.VSpfhtTpnYxshtqd;
 
 public interface VSpfhtTpnYxshtqdRepository extends JpaRepository<VSpfhtTpnYxshtqd, Long> {
-	List<VSpfhtTpnYxshtqd> findByHtqdsjBetweenOrderByHtqdsjDesc(LocalDate HtqdsjAfter,
-			LocalDate HtqdsjBefore);
+    List<VSpfhtTpnYxshtqd> findByHtqdsjBetweenOrderByHtqdsjDesc(LocalDate HtqdsjAfter,
+                                                                LocalDate HtqdsjBefore);
 
-	List<VSpfhtTpnYxshtqd> findByFwzlLikeOrderByHtqdsjDesc(String fwzl);
+    List<VSpfhtTpnYxshtqd> findByFwzlLikeOrderByHtqdsjDesc(String fwzl);
 }

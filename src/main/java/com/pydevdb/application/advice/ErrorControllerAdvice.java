@@ -12,16 +12,16 @@ import org.springframework.web.servlet.ModelAndView;
 @ControllerAdvice
 public class ErrorControllerAdvice implements ErrorViewResolver {
 
-	@Override
-	public ModelAndView resolveErrorView(HttpServletRequest request, HttpStatus status, Map<String, Object> model) {
+    @Override
+    public ModelAndView resolveErrorView(HttpServletRequest request, HttpStatus status, Map<String, Object> model) {
 
-		ModelAndView modelAndView = new ModelAndView();
+        ModelAndView modelAndView = new ModelAndView();
 
-		modelAndView.addObject("Status", status);
+        modelAndView.addObject("Status", status);
 
-		modelAndView.setViewName("Status");
+        modelAndView.setViewName("Status");
 
-		return modelAndView;
+        return modelAndView;
 
-	}
+    }
 }

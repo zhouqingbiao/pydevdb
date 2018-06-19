@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class SlashController {
 
-	@GetMapping("/")
-	public String controller(Model model, HttpServletRequest request) {
+    @GetMapping("/")
+    public String controller(Model model, HttpServletRequest request) {
 
-		// IP
-		model.addAttribute("RA", request.getRemoteAddr());
+        // IP
+        model.addAttribute("RA", request.getRemoteAddr());
 
-		return "Slash";
-	}
+        return "Slash";
+    }
 }

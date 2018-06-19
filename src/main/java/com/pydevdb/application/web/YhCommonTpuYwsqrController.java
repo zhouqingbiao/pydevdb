@@ -17,32 +17,32 @@ import com.pydevdb.application.service.YhCommonTpuYwsqrRepository;
 @Controller
 public class YhCommonTpuYwsqrController {
 
-	@Autowired
-	private YhCommonTpuYwsqrRepository yhCommonTpuYwsqrRepository;
+    @Autowired
+    private YhCommonTpuYwsqrRepository yhCommonTpuYwsqrRepository;
 
-	@GetMapping("/YhCommonTpuYwsqr")
-	public String yhCommonTpuYwsqrGet(Model model, @ModelAttribute YhCommonTpuYwsqr yhCommonTpuYwsqr) {
+    @GetMapping("/YhCommonTpuYwsqr")
+    public String yhCommonTpuYwsqrGet(Model model, @ModelAttribute YhCommonTpuYwsqr yhCommonTpuYwsqr) {
 
-		if (StringUtils.isEmpty(yhCommonTpuYwsqr.getSqrmc()) && StringUtils.isEmpty(yhCommonTpuYwsqr.getZjhm())) {
-			return "YhCommonTpuYwsqr";
-		} else {
-			List<YhCommonTpuYwsqr> listYhCommonTpuYwsqr = yhCommonTpuYwsqrRepository
-					.findBySqrmcLikeOrZjhm(yhCommonTpuYwsqr.getSqrmc(), yhCommonTpuYwsqr.getZjhm());
+        if (StringUtils.isEmpty(yhCommonTpuYwsqr.getSqrmc()) && StringUtils.isEmpty(yhCommonTpuYwsqr.getZjhm())) {
+            return "YhCommonTpuYwsqr";
+        } else {
+            List<YhCommonTpuYwsqr> listYhCommonTpuYwsqr = yhCommonTpuYwsqrRepository
+                    .findBySqrmcLikeOrZjhm(yhCommonTpuYwsqr.getSqrmc(), yhCommonTpuYwsqr.getZjhm());
 
-			model.addAttribute("listYhCommonTpuYwsqr", listYhCommonTpuYwsqr);
+            model.addAttribute("listYhCommonTpuYwsqr", listYhCommonTpuYwsqr);
 
-		}
+        }
 
-		return "YhCommonTpuYwsqr";
-	}
+        return "YhCommonTpuYwsqr";
+    }
 
-	@PostMapping("/YhCommonTpuYwsqr")
-	public String yhCommonTpuYwsqrPost(Model model, @ModelAttribute YhCommonTpuYwsqr yhCommonTpuYwsqr) {
+    @PostMapping("/YhCommonTpuYwsqr")
+    public String yhCommonTpuYwsqrPost(Model model, @ModelAttribute YhCommonTpuYwsqr yhCommonTpuYwsqr) {
 
-		yhCommonTpuYwsqrRepository.save(yhCommonTpuYwsqr);
-		Optional<YhCommonTpuYwsqr> optionalYhCommonTpuYwsqr = yhCommonTpuYwsqrRepository
-				.findById(yhCommonTpuYwsqr.getId());
-		model.addAttribute("listYhCommonTpuYwsqr", optionalYhCommonTpuYwsqr.get());
-		return "YhCommonTpuYwsqr";
-	}
+        yhCommonTpuYwsqrRepository.save(yhCommonTpuYwsqr);
+        Optional<YhCommonTpuYwsqr> optionalYhCommonTpuYwsqr = yhCommonTpuYwsqrRepository
+                .findById(yhCommonTpuYwsqr.getId());
+        model.addAttribute("listYhCommonTpuYwsqr", optionalYhCommonTpuYwsqr.get());
+        return "YhCommonTpuYwsqr";
+    }
 }

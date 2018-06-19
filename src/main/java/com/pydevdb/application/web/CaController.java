@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class CaController {
-	@GetMapping("/Ca")
-	public String controller(Model model, HttpServletRequest request) {
-		return "Ca";
-	}
+    @GetMapping("/Ca")
+    public String controller(Model model, HttpServletRequest request) {
+        return "Ca";
+    }
 }

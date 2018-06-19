@@ -15,25 +15,25 @@ import com.pydevdb.application.service.VClfhtTpeZrhtqdRepository;
 @Controller
 public class VClfhtTpeZrhtqdController {
 
-	@Autowired
-	private VClfhtTpeZrhtqdRepository vClfhtTpeZrhtqdRepository;
+    @Autowired
+    private VClfhtTpeZrhtqdRepository vClfhtTpeZrhtqdRepository;
 
-	@GetMapping("/VClfhtTpeZrhtqd")
-	public String vClfhtTpeZrhtqdGet(Model model, String fwzl) {
+    @GetMapping("/VClfhtTpeZrhtqd")
+    public String vClfhtTpeZrhtqdGet(Model model, String fwzl) {
 
-		List<VClfhtTpeZrhtqd> listVClfhtTpeZrhtqd;
+        List<VClfhtTpeZrhtqd> listVClfhtTpeZrhtqd;
 
-		if (StringUtils.isEmpty(fwzl)) {
-			listVClfhtTpeZrhtqd = vClfhtTpeZrhtqdRepository
-					.findByHtqdsjBetweenOrderByHtqdsjDesc(LocalDate.now().minusWeeks(1), LocalDate.now().plusDays(1));
-		} else {
-			listVClfhtTpeZrhtqd = vClfhtTpeZrhtqdRepository.findByFwzlLikeOrderByHtqdsjDesc("%" + fwzl + "%");
-		}
+        if (StringUtils.isEmpty(fwzl)) {
+            listVClfhtTpeZrhtqd = vClfhtTpeZrhtqdRepository
+                    .findByHtqdsjBetweenOrderByHtqdsjDesc(LocalDate.now().minusWeeks(1), LocalDate.now().plusDays(1));
+        } else {
+            listVClfhtTpeZrhtqd = vClfhtTpeZrhtqdRepository.findByFwzlLikeOrderByHtqdsjDesc("%" + fwzl + "%");
+        }
 
-		model.addAttribute("fwzl", fwzl);
-		model.addAttribute("listVClfhtTpeZrhtqd", listVClfhtTpeZrhtqd);
+        model.addAttribute("fwzl", fwzl);
+        model.addAttribute("listVClfhtTpeZrhtqd", listVClfhtTpeZrhtqd);
 
-		return "VClfhtTpeZrhtqd";
-	}
+        return "VClfhtTpeZrhtqd";
+    }
 
 }

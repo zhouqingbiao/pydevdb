@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class YhController {
 
-	@GetMapping("/Yh")
-	public String controller(Model model, HttpServletRequest request) {
+    @GetMapping("/Yh")
+    public String controller(Model model, HttpServletRequest request) {
 
-		return "Yh";
-	}
+        return "Yh";
+    }
 }

@@ -1,68 +1,69 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
+    <meta charset="utf-8">
 
-<!-- Required meta tags -->
-<meta data-th-replace="Starter :: meta">
+    <!-- Required meta tags -->
+    <meta data-th-replace="Starter :: meta">
 
-<!-- Bootstrap CSS -->
-<link data-th-replace="Starter :: link">
+    <!-- Bootstrap CSS -->
+    <link data-th-replace="Starter :: link">
 
-<!-- Seniverse -->
-<script data-th-replace="SeniverseFDQP :: script"></script>
+    <!-- Seniverse -->
+    <script data-th-replace="SeniverseFDQP :: script"></script>
 
-<title>CaZfbzTpgZbzg</title>
+    <title>CaZfbzTpgZbzg</title>
 </head>
 <body>
-	<div data-th-replace="Navbar :: nav"></div>
+<div data-th-replace="Navbar :: nav"></div>
 
-	<div class="container">
-		<h1 data-th-text="${message}"></h1>
-		<form data-th-each="list : ${listCaZfbzTpgZbzg}" method="post"
-			action="/CaZfbzTpgZbzg">
-			<div class="form-row">
-				<div class="form-group col-md-3">
-					<label for="id">ID</label> <input type="text" class="form-control"
-						name="id" id="id" placeholder="ID" readonly="readonly"
-						data-th-value="${list.id}">
-				</div>
-				<div class="form-group col-md-3">
-					<label for="sqrxm">SQRXM</label> <input type="text"
-						class="form-control" name="sqrxm" id="sqrxm" placeholder="SQRMC"
-						data-th-value="${list.sqrxm}">
-				</div>
-				<div class="form-group col-md-3">
-					<label for="sqrsfzh">SQRSFZH</label> <input type="text"
-						class="form-control" name="sqrsfzh" id="sqrsfzh"
-						placeholder="ZJHM" data-th-value="${list.sqrsfzh}">
-				</div>
-				<div class="form-group col-md-3">
-					<label for="zgzh">ZGZH</label> <input type="text"
-						class="form-control" name="zgzh" id="zgzh" placeholder="ZGZH"
-						data-th-value="${list.zgzh}">
-				</div>
-			</div>
-			<div class="form-row">
-				<div class="form-group col-md-3">
-					<label for="zgzlb">ZGZLB</label> <input type="text"
-						class="form-control" name="zgzlb" id="zgzlb" placeholder="ZGZLB"
-						data-th-value="${list.zgzlb}">
-				</div>
-				<div class="form-group col-md-1">
-					<label for="submit">BUTTON</label>
-					<button type="submit" class="form-control btn btn-primary"
-						id="submit">保存</button>
-				</div>
-			</div>
-		</form>
-	</div>
+<div class="container">
+    <h1 data-th-text="${message}"></h1>
+    <form data-th-each="list : ${listCaZfbzTpgZbzg}" method="post"
+          action="/CaZfbzTpgZbzg">
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label for="id">ID</label> <input type="text" class="form-control"
+                                                  name="id" id="id" placeholder="ID" readonly="readonly"
+                                                  data-th-value="${list.id}">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="sqrxm">SQRXM</label> <input type="text"
+                                                        class="form-control" name="sqrxm" id="sqrxm" placeholder="SQRMC"
+                                                        data-th-value="${list.sqrxm}">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="sqrsfzh">SQRSFZH</label> <input type="text"
+                                                            class="form-control" name="sqrsfzh" id="sqrsfzh"
+                                                            placeholder="ZJHM" data-th-value="${list.sqrsfzh}">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="zgzh">ZGZH</label> <input type="text"
+                                                      class="form-control" name="zgzh" id="zgzh" placeholder="ZGZH"
+                                                      data-th-value="${list.zgzh}">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label for="zgzlb">ZGZLB</label> <input type="text"
+                                                        class="form-control" name="zgzlb" id="zgzlb" placeholder="ZGZLB"
+                                                        data-th-value="${list.zgzlb}">
+            </div>
+            <div class="form-group col-md-1">
+                <label for="submit">BUTTON</label>
+                <button type="submit" class="form-control btn btn-primary"
+                        id="submit">保存
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
 
-	<!-- Optional JavaScript -->
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script data-th-replace="Starter :: script"></script>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script data-th-replace="Starter :: script"></script>
 
-	<!-- Seniverse -->
-	<script data-th-replace="SeniverseGDJJ :: script"></script>
+<!-- Seniverse -->
+<script data-th-replace="SeniverseGDJJ :: script"></script>
 </body>
 </html>

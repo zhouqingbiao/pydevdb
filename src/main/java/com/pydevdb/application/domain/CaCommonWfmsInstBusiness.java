@@ -13,72 +13,72 @@ import javax.persistence.Table;
 @Table(schema = "CA_COMMON", name = "WFMS_INST_BUSINESS")
 public class CaCommonWfmsInstBusiness implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	@Id
-	@GeneratedValue
-	private Long id;
+    @Id
+    @GeneratedValue
+    private Long id;
 
-	@Column
-	private String instprocessid;
+    @Column
+    private String instprocessid;
 
-	@Column
-	private String businesstitle;
+    @Column
+    private String businesstitle;
 
-	@Column
-	private String acceptcode;
+    @Column
+    private String acceptcode;
 
-	@Column
-	private Date accepttime;
+    @Column
+    private Date accepttime;
 
-	@Column
-	private String bpcategorycode;
+    @Column
+    private String bpcategorycode;
 
-	public Long getId() {
-		return id;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public String getInstprocessid() {
-		return instprocessid;
-	}
+    public String getInstprocessid() {
+        return instprocessid;
+    }
 
-	public void setInstprocessid(String instprocessid) {
-		this.instprocessid = instprocessid;
-	}
+    public void setInstprocessid(String instprocessid) {
+        this.instprocessid = instprocessid;
+    }
 
-	public String getBusinesstitle() {
-		return businesstitle;
-	}
+    public String getBusinesstitle() {
+        return businesstitle;
+    }
 
-	public void setBusinesstitle(String businesstitle) {
-		this.businesstitle = businesstitle;
-	}
+    public void setBusinesstitle(String businesstitle) {
+        this.businesstitle = businesstitle;
+    }
 
-	public String getAcceptcode() {
-		return acceptcode;
-	}
+    public String getAcceptcode() {
+        return acceptcode;
+    }
 
-	public void setAcceptcode(String acceptcode) {
-		this.acceptcode = acceptcode;
-	}
+    public void setAcceptcode(String acceptcode) {
+        this.acceptcode = acceptcode;
+    }
 
-	public Date getAccepttime() {
-		return accepttime;
-	}
+    public Date getAccepttime() {
+        return accepttime;
+    }
 
-	public void setAccepttime(Date accepttime) {
-		this.accepttime = accepttime;
-	}
+    public void setAccepttime(Date accepttime) {
+        this.accepttime = accepttime;
+    }
 
-	public String getBpcategorycode() {
-		return bpcategorycode;
-	}
+    public String getBpcategorycode() {
+        return bpcategorycode;
+    }
 
-	public void setBpcategorycode(String bpcategorycode) {
-		this.bpcategorycode = bpcategorycode;
-	}
+    public void setBpcategorycode(String bpcategorycode) {
+        this.bpcategorycode = bpcategorycode;
+    }
 }

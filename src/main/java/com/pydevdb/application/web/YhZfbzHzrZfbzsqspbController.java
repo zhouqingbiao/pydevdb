@@ -17,29 +17,29 @@ import com.pydevdb.application.service.YhZfbzHzrZfbzsqspbRepository;
 @Controller
 public class YhZfbzHzrZfbzsqspbController {
 
-	@Autowired
-	private YhZfbzHzrZfbzsqspbRepository yhZfbzHzrZfbzsqspbRepository;
+    @Autowired
+    private YhZfbzHzrZfbzsqspbRepository yhZfbzHzrZfbzsqspbRepository;
 
-	@GetMapping("/YhZfbzHzrZfbzsqspb")
-	public String yhZfbzHzrZfbzsqspbGet(Model model, Long businessid) {
+    @GetMapping("/YhZfbzHzrZfbzsqspb")
+    public String yhZfbzHzrZfbzsqspbGet(Model model, Long businessid) {
 
-		if (StringUtils.isEmpty(businessid)) {
-			return "YhZfbzHzrZfbzsqspb";
-		} else {
-			List<YhZfbzHzrZfbzsqspb> listYhZfbzHzrZfbzsqspb = yhZfbzHzrZfbzsqspbRepository.findByBusinessid(businessid);
-			model.addAttribute("listYhZfbzHzrZfbzsqspb", listYhZfbzHzrZfbzsqspb);
-		}
+        if (StringUtils.isEmpty(businessid)) {
+            return "YhZfbzHzrZfbzsqspb";
+        } else {
+            List<YhZfbzHzrZfbzsqspb> listYhZfbzHzrZfbzsqspb = yhZfbzHzrZfbzsqspbRepository.findByBusinessid(businessid);
+            model.addAttribute("listYhZfbzHzrZfbzsqspb", listYhZfbzHzrZfbzsqspb);
+        }
 
-		return "YhZfbzHzrZfbzsqspb";
-	}
+        return "YhZfbzHzrZfbzsqspb";
+    }
 
-	@PostMapping("/YhZfbzHzrZfbzsqspb")
-	public String yhZfbzHzrZfbzsqspbPost(Model model, @ModelAttribute YhZfbzHzrZfbzsqspb YhZfbzHzrZfbzsqspb) {
+    @PostMapping("/YhZfbzHzrZfbzsqspb")
+    public String yhZfbzHzrZfbzsqspbPost(Model model, @ModelAttribute YhZfbzHzrZfbzsqspb YhZfbzHzrZfbzsqspb) {
 
-		yhZfbzHzrZfbzsqspbRepository.save(YhZfbzHzrZfbzsqspb);
-		Optional<YhZfbzHzrZfbzsqspb> optionalYhZfbzHzrZfbzsqspb = yhZfbzHzrZfbzsqspbRepository
-				.findById(YhZfbzHzrZfbzsqspb.getId());
-		model.addAttribute("listYhZfbzHzrZfbzsqspb", optionalYhZfbzHzrZfbzsqspb.get());
-		return "YhZfbzHzrZfbzsqspb";
-	}
+        yhZfbzHzrZfbzsqspbRepository.save(YhZfbzHzrZfbzsqspb);
+        Optional<YhZfbzHzrZfbzsqspb> optionalYhZfbzHzrZfbzsqspb = yhZfbzHzrZfbzsqspbRepository
+                .findById(YhZfbzHzrZfbzsqspb.getId());
+        model.addAttribute("listYhZfbzHzrZfbzsqspb", optionalYhZfbzHzrZfbzsqspb.get());
+        return "YhZfbzHzrZfbzsqspb";
+    }
 }
