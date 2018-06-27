@@ -1,13 +1,8 @@
 package com.pydevdb.application.domain;
 
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Entity
 @Table(schema = "CA_COMMON", name = "WFMS_INST_BUSINESS")

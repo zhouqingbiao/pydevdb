@@ -1,12 +1,7 @@
 package com.pydevdb.application.domain;
 
+import javax.persistence.*;
 import java.io.Serializable;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Entity
 @Table(schema = "YH_ZFBZ", name = "TPG_YCXZFBT")

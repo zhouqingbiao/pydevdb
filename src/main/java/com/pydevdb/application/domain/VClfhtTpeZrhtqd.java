@@ -1,13 +1,8 @@
 package com.pydevdb.application.domain;
 
+import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Entity
 @Table(schema = "SCOTT", name = "V_CLFHT_TPE_ZRHTQD")

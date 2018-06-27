@@ -1,10 +1,9 @@
 package com.pydevdb.application.service;
 
-import java.util.List;
-
+import com.pydevdb.application.domain.YhCommonTpuYwsqr;
 import org.springframework.data.repository.CrudRepository;
 
-import com.pydevdb.application.domain.YhCommonTpuYwsqr;
+import java.util.List;
 
 public interface YhCommonTpuYwsqrRepository extends CrudRepository<YhCommonTpuYwsqr, Long> {
     List<YhCommonTpuYwsqr> findBySqrmcLikeOrZjhm(String sqrmc, String zjhm);

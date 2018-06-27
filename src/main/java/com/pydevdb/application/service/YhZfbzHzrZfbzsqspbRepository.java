@@ -1,10 +1,9 @@
 package com.pydevdb.application.service;
 
-import java.util.List;
-
+import com.pydevdb.application.domain.YhZfbzHzrZfbzsqspb;
 import org.springframework.data.repository.CrudRepository;
 
-import com.pydevdb.application.domain.YhZfbzHzrZfbzsqspb;
+import java.util.List;
 
 public interface YhZfbzHzrZfbzsqspbRepository extends CrudRepository<YhZfbzHzrZfbzsqspb, Long> {
     List<YhZfbzHzrZfbzsqspb> findByBusinessid(Long businessid);

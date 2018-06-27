@@ -1,11 +1,10 @@
 package com.pydevdb.application.service;
 
-import java.time.LocalDate;
-import java.util.List;
-
+import com.pydevdb.application.domain.VSpfhtTpnYxshtqd;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.pydevdb.application.domain.VSpfhtTpnYxshtqd;
+import java.time.LocalDate;
+import java.util.List;
 
 public interface VSpfhtTpnYxshtqdRepository extends JpaRepository<VSpfhtTpnYxshtqd, Long> {
     List<VSpfhtTpnYxshtqd> findByHtqdsjBetweenOrderByHtqdsjDesc(LocalDate HtqdsjAfter,
